@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
@@ -20,7 +21,15 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            // This check to to see if KEY_UID exist, if it does, then performSegue. This cannot be in viewDidLoad because it can only perform after the view appears.
+            
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
 
     @IBAction func facebookButtonTapped(_ sender: Any) {
@@ -49,30 +58,56 @@ class SignInVC: UIViewController {
                 print("Unable to authenticate with Firebase - \(error)")
             } else {
                 print("Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
         
     }
 
     @IBAction func signinTapped(_ sender: Any) {
-        if let email = emailField.text, let password = passwordField.text {
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-                if error == nil {
-                    print("Email user authenticated with Firebase")
-                } else {
-                    // if user doesn't exit we will create a new account for him. 
-                    FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                        if error != nil {
-                            print("Unable to create user - \(error)")
-                        } else {
-                            print("User created")
-                        }
-                    })
-                    
-                }
-            })
+        guard let email = emailField.text, !email.isEmpty else {
+            print("The email field needs to be populated")
+            return
         }
+        
+        guard let password = passwordField.text, !password.isEmpty else {
+            print("The passworld field needs to be populated")
+            return
+        }
+        
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            if error == nil {
+                print("Email user authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
+            } else {
+                // if user doesn't exit we will create a new account for him. 
+                FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                    if error != nil {
+                        print("Unable to create user - \(error)")
+                    } else {
+                        print("User created")
+                        if let user = user {
+                            self.completeSignIn(id: user.uid)
+                        }
+                    }
+                })
+                
+            }
+        })
     }
+    
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to keychain \(keychainResult)")
+        
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
+    
+    
     
 }
 
