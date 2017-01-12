@@ -21,6 +21,7 @@
 		F795F1081E267B83005DD0FF /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F1071E267B83005DD0FF /* SigninButton.swift */; };
 		F7F19ABB1E27CD06006EB3B9 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABA1E27CD06006EB3B9 /* FeedVC.swift */; };
 		F7F19ABD1E27EDA1006EB3B9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */; };
+		F7F19ABF1E28022E006EB3B9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABE1E28022E006EB3B9 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F795F1071E267B83005DD0FF /* SigninButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
 		F7F19ABA1E27CD06006EB3B9 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		F7F19ABE1E28022E006EB3B9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				F795F1051E2676D0005DD0FF /* FancyField.swift */,
 				F795F1071E267B83005DD0FF /* SigninButton.swift */,
 				F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */,
+				F7F19ABE1E28022E006EB3B9 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				F795F0E81E25C167005DD0FF /* AppDelegate.swift in Sources */,
 				F795F0FF1E266F21005DD0FF /* FancyView.swift in Sources */,
 				F795F1021E2672F8005DD0FF /* Constants.swift in Sources */,
+				F7F19ABF1E28022E006EB3B9 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
