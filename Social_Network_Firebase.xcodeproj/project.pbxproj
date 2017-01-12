@@ -20,6 +20,7 @@
 		F795F1061E2676D0005DD0FF /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F1051E2676D0005DD0FF /* FancyField.swift */; };
 		F795F1081E267B83005DD0FF /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F795F1071E267B83005DD0FF /* SigninButton.swift */; };
 		F7F19ABB1E27CD06006EB3B9 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABA1E27CD06006EB3B9 /* FeedVC.swift */; };
+		F7F19ABD1E27EDA1006EB3B9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F795F1051E2676D0005DD0FF /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		F795F1071E267B83005DD0FF /* SigninButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
 		F7F19ABA1E27CD06006EB3B9 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				F795F1031E2674E5005DD0FF /* RoundButton.swift */,
 				F795F1051E2676D0005DD0FF /* FancyField.swift */,
 				F795F1071E267B83005DD0FF /* SigninButton.swift */,
+				F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F795F1081E267B83005DD0FF /* SigninButton.swift in Sources */,
+				F7F19ABD1E27EDA1006EB3B9 /* CircleImageView.swift in Sources */,
 				F795F1061E2676D0005DD0FF /* FancyField.swift in Sources */,
 				F795F0EA1E25C167005DD0FF /* SignInVC.swift in Sources */,
 				F795F1041E2674E5005DD0FF /* RoundButton.swift in Sources */,
