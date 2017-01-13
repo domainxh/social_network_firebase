@@ -23,6 +23,7 @@
 		F7F19ABD1E27EDA1006EB3B9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */; };
 		F7F19ABF1E28022E006EB3B9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19ABE1E28022E006EB3B9 /* PostCell.swift */; };
 		F7F19AC21E282906006EB3B9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19AC11E282906006EB3B9 /* DataService.swift */; };
+		F7F19AC41E286289006EB3B9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F19AC31E286289006EB3B9 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F7F19ABC1E27EDA1006EB3B9 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		F7F19ABE1E28022E006EB3B9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F7F19AC11E282906006EB3B9 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F7F19AC31E286289006EB3B9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		F795F0FD1E25C8A1005DD0FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7F19AC31E286289006EB3B9 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				F795F1081E267B83005DD0FF /* SigninButton.swift in Sources */,
 				F7F19ABD1E27EDA1006EB3B9 /* CircleImageView.swift in Sources */,
 				F795F1061E2676D0005DD0FF /* FancyField.swift in Sources */,
+				F7F19AC41E286289006EB3B9 /* Post.swift in Sources */,
 				F795F0EA1E25C167005DD0FF /* SignInVC.swift in Sources */,
 				F795F1041E2674E5005DD0FF /* RoundButton.swift in Sources */,
 				F7F19AC21E282906006EB3B9 /* DataService.swift in Sources */,
