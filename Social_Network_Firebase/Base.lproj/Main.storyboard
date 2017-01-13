@@ -186,13 +186,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Ya-Y9-fVS">
                                         <rect key="frame" x="8" y="8" width="343" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="guV-8f-7hL" customClass="CircleImageView" customModule="Social_Network_Firebase" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="guV-8f-7hL" customClass="CircleImageView" customModule="Social_Network_Firebase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="gpR-Ps-mqF"/>
                                                     <constraint firstAttribute="height" constant="49" id="o0b-ev-Ulf"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="FHv-Hm-2Re" appends="YES" id="fpy-FJ-a6n"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yEy-Lz-HhB" customClass="FancyField" customModule="Social_Network_Firebase" customModuleProvider="target">
                                                 <rect key="frame" x="59" y="0.0" width="225" height="49"/>
@@ -344,6 +348,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="guV-8f-7hL" id="62m-4n-wnH"/>
                         <outlet property="tableView" destination="xux-Ot-Qgh" id="CFM-fZ-L8k"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToMain" id="c2c-wW-XWl"/>
                     </connections>
@@ -352,6 +357,11 @@
                 <tapGestureRecognizer id="ZDC-Rl-oXi">
                     <connections>
                         <action selector="signOutTapped:" destination="lQC-YL-6MX" id="Vyv-zc-Lun"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="FHv-Hm-2Re">
+                    <connections>
+                        <action selector="selectImageTapped:" destination="lQC-YL-6MX" id="q6t-aI-9Ct"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
