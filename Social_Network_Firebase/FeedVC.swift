@@ -99,6 +99,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         performSegue(withIdentifier: "goToMain", sender: nil)
     }
     
+    func postToFirebase(imageURL: String) {
+        let post: Dictionary<String, AnyObject> = [
+            "captions": captionField.text! as AnyObject,
+            "ImageURL": imageURL as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        // after posting, its ideal to clear out the contents in the text field and the imagefield
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "add-image")
+    }
+    
     @IBAction func postTapped(_ sender: Any) {
         guard let caption = captionField.text, caption != "" else { return }
         guard let image = imageAdd.image, imageSelected == true else { return }
@@ -118,6 +134,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 } else {
                     print("Image successfully uploaded to firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imageURL: url)
+                    }
                 }
                 
             }
