@@ -60,10 +60,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             
             // This pulls image out of imageCache and display it on the tableView cell
             if let img = FeedVC.imageCache.object(forKey: posts[indexPath.row].ImageURL as NSString) {
-                cell.configureCell(posts[indexPath.row], img: img)
+                cell.configureCell(post: posts[indexPath.row], img: img)
                 return cell
             } else {
-                cell.configureCell(posts[indexPath.row])
+                cell.configureCell(post: posts[indexPath.row])
                 return cell
             }
             
@@ -113,6 +113,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         captionField.text = ""
         imageSelected = false
         imageAdd.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
     }
     
     @IBAction func postTapped(_ sender: Any) {

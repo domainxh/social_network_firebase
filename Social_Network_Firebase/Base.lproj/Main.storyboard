@@ -259,7 +259,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomtext Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ9-Ea-M2c">
-                                                                            <rect key="frame" x="60" y="17.5" width="223" height="25"/>
+                                                                            <rect key="frame" x="60" y="18" width="223" height="25"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                                             <color key="textColor" red="1" green="0.064046748230000006" blue="0.20783988249999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -289,16 +289,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-Cl-Uyc">
-                                                            <rect key="frame" x="272" y="299" width="79" height="22"/>
+                                                            <rect key="frame" x="271" y="299" width="80" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-mo-NnD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="22"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-vy-B0z">
-                                                                    <rect key="frame" x="41.5" y="0.0" width="37.5" height="22"/>
+                                                                    <rect key="frame" x="42" y="0.0" width="38" height="22"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -327,6 +327,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="Nh6-o5-yGX" id="7HN-PQ-nqP"/>
+                                            <outlet property="likeButton" destination="4Ub-19-rI6" id="hKq-RZ-Ugt"/>
                                             <outlet property="likeLabel" destination="qyo-vy-B0z" id="Nde-G4-4Yq"/>
                                             <outlet property="postedImage" destination="gcy-QD-MCE" id="neO-Pi-3QC"/>
                                             <outlet property="profileImage" destination="EF9-e4-XKH" id="Zrh-rF-RLB"/>
@@ -379,7 +380,7 @@
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
         <image name="placeholder" width="567" height="312"/>
-        <image name="profile" width="113" height="155"/>
+        <image name="profile" width="2523" height="3154"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
