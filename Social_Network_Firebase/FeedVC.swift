@@ -14,9 +14,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleImageView!
+    @IBOutlet weak var captionField: FancyField!
     
     var imagePicker: UIImagePickerController!
     var posts = [Post]()
+    var imageSelected = false
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     
@@ -56,7 +58,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PostCell {
             
-            
+            // This pulls image out of imageCache and display it on the tableView cell
             if let img = FeedVC.imageCache.object(forKey: posts[indexPath.row].ImageURL as NSString) {
                 cell.configureCell(posts[indexPath.row], img: img)
                 return cell
@@ -76,6 +78,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
         } else {
             print("A valid image wasn't selected")
         }
@@ -89,12 +92,38 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBAction func signOutTapped(_ sender: Any) {
         
-        let keychainResult = KeychainWrapper.standard.remove(key: KEY_UID)
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("ID removed from keychain \(keychainResult)")
         
         try! FIRAuth.auth()?.signOut()
-        
         performSegue(withIdentifier: "goToMain", sender: nil)
     }
+    
+    @IBAction func postTapped(_ sender: Any) {
+        guard let caption = captionField.text, caption != "" else { return }
+        guard let image = imageAdd.image, imageSelected == true else { return }
+        
+        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+            //this converts the image to imageData with 0.2 compression quality 
+            
+            let imageUID = NSUUID().uuidString
+            // This creates unique UID for each images
+            
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("Unable to upload image to firebase storage: \(error)")
+                } else {
+                    print("Image successfully uploaded to firebase storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+                
+            }
+        }
+        
+    }
+    
     
 }

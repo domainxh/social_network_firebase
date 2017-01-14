@@ -37,6 +37,8 @@ class PostCell: UITableViewCell {
         } else {
             let ref = FIRStorage.storage().reference(forURL: post.ImageURL)
             ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                // This downloads the file asyncronously with a max size to NSData
+                
                 if error != nil {
                     print("Unable to download image from firebase storage: \(error)")
                 } else {
@@ -45,14 +47,11 @@ class PostCell: UITableViewCell {
                         if let img = UIImage(data: imgData) {
                             self.postedImage.image = img
                             FeedVC.imageCache.setObject(img, forKey: post.ImageURL as NSString)
+                            // This stores the image in the imageCache
                         }
                     }
                 }
-
             })
-            
         }
-        
     }
-
 }
